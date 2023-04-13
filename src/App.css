@@ -1,38 +1,369 @@
 .App {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  color: #212121;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  place-items: center;
+ 
+}
+body {
+  margin: 0%;
+  padding: 0%;
+
+
+  
+}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
+.joinChatContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+   align-items: center;  
   text-align: center;
+ border: 2.5px dashed #F0D500;
+   height: 600px;
+   width: 600px;
+   border-radius: 10px;
+  text-transform: uppercase;
+}
+#txt1{
+  color: rebeccapurple;
+}
+#txt2{
+
+  text-decoration: dashed;
+
+  font-size: 2.7rem;
+  border-radius: 100px;
+
+  
+  
+}
+#txt3{
+  color:rgb(94, 92, 255);
+;
+  font-size: 3.1rem;
+ 
+
+  
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.joinChatContainer h3 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+.joinChatContainer input {
+  width: 300px;
+  height: 10px;
+  margin: 10px;
+    border: 2.5px dashed #F0D500; 
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 16px;
+  display: flex;
+  padding: 30px;
+ transition: 0.6s;
+
+}
+.joinChatContainer input:hover{
+   
+ 
+   transform: scale(1.2);
+
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.joinChatContainer button {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  border: 2.5px dashed #F0D500;   
+  border-radius: 50px;
+  padding: 5px;
+  font-size: 20px;
+  background: #fdfdfd;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: 0.5s;display: block;
+ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  padding: 2.5px;
+  background-clip: content-box;
+  animation: spin 2s linear infinite;
+  transform: rotateY(180deg)  ;
+  
+}
+/* .joinChatContainer:active button {
+  animation: spin 2s linear infinite;
+} */
+@keyframes spin { 
+  100% { 
+    transform: rotateZ(360deg);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.joinChatContainer button:hover {
+  transform: scale(1.2);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+} 
+
+.chat-window {
+  width: 500px;
+  height: 800px;
+
+ 
+}
+
+.chat-window p {
+  margin: 0;
+}
+.chat-window .chat-header {
+  height: 45px;
+  border-radius: 10px;
+  background: #cddae0af;
+  position: relative;
+  cursor: pointer;
+   border: 4.5px dashed #F0D500;  
+   margin-bottom: 20px;
+}
+.chat-window .chat-header p {
+  display: block;
+  padding: 0 1em 0 2em;
+  color: rgb(15, 15, 15);
+  font-weight: 700;
+  line-height: 45px;
+  
+  
+}
+
+.chat-window .chat-body {
+  height: calc(450px - (45px + 70px));
+  border: 1px solid #263238;
+  background: #fff;
+ border: 4.5px dashed #F0D500;  
+  position: relative;
+   border-radius: 10px; 
+}
+.chat-header:hover{
+   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.chat-body:hover {
+  
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.chat-window .chat-body .message-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
+
+.chat-window .chat-body .message-container::-webkit-scrollbar {
+  display: none;
+}
+.chat-window .chat-body .message {
+  height: auto;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
+   
+}
+
+.chat-window .chat-body .message .message-content {
+  width: auto;
+  height: auto;
+  min-height: 40px;
+  max-width: 120px;
+  background-color: #43a047;
+  border-radius: 5px;
+  color: white;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+ 
+   
+}
+
+#you {
+  justify-content: flex-start;
+}
+
+#you .message-content {
+  justify-content: flex-start;
+}
+
+#you .message-meta {
+  justify-content: flex-start;
+  margin-left: 5px;
+}
+
+#other {
+  justify-content: flex-end;
+}
+
+#other .message-content {
+  justify-content: flex-end;
+  background-color: cornflowerblue;
+}
+
+#other .message-meta {
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.message-meta #author {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.chat-window .chat-body .message .message-meta {
+  display: flex;
+  font-size: 15px;
+
+}
+
+.chat-window .chat-footer {
+  height: 60px;
+ 
+  margin-top: 10px;
+  display: flex;
+   border: 4.5px dashed #F0D500; 
+   border-radius: 10px; 
+   
+}
+
+.chat-footer:hover{
+  transform: scaleY(1.2);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.chat-window .chat-footer input {
+  height: 100%;
+  flex: 85%;
+  border: 0;
+  padding: 0 0.7em;
+  font-size: 1em;
+  border-right: 1px dotted #607d8b;
+
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+.chat-window .chat-footer button {
+  border: 0;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex: 15%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  font-size: 25px;
+  color: lightgray;
+}
+
+.chat-window .chat-footer button:hover {
+  color: #43a047;
+}
+.hide {
+  opacity: 0 !important;
+}
+
+
+
+
+#txt{
+  color: #F0D500;
+  width: 350px;
+ 
+} 
+
+
+
+
+
+
+/* ------------popup----------css */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+/* -----------------alert------------------ */
+.alert {
+  padding: 20px;
+  background-color: #f44336;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.closebtn:hover {
+  color: black;
 }
